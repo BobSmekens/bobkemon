@@ -33,15 +33,7 @@ else {
         </div>
       </div>
     </div>
-    <div class="gen-links">
-    <div class="gen-links-title">Jump to:</div>
-      <a class="" href="php/gen2Handler.php">Gen 2</a>
-      <a class="" href="php/gen3Handler.php">Gen 3</a>
-      <a class="" href="php/gen4Handler.php">Gen 4</a>
-      <a class="" href="php/gen5Handler.php">Gen 5</a>
-      <a class="" href="php/gen6Handler.php">Gen 6</a>
-      <a class="" href="php/gen7Handler.php">Gen 7</a>
-    </div>
+    
       <a class="change-list-link list-link-left link-button" href="php/previousHandler.php">Previous</a>
 
         <a class="change-list-link list-link-left link-button" href="php/previousHandler.php">Previous</a>

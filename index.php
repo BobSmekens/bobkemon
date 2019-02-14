@@ -19,12 +19,21 @@ if(session_start()){
 <body class="indexBody" onload="showRecommended()">
 <div class="indexTitle">Bobkémon <br>The pokémon-team-suggest-machine!</div>
 <div class="row" ng-app="pokeApp" ng-controller="myCtrl">
-    <div class="col-6 poke-list">
+<div class="col-3 gen-links">
+    <div class="gen-links-title">Jump to:</div>
+      <a class="" href="php/gen2Handler.php">Gen 2</a>
+      <a class="" href="php/gen3Handler.php">Gen 3</a>
+      <a class="" href="php/gen4Handler.php">Gen 4</a>
+      <a class="" href="php/gen5Handler.php">Gen 5</a>
+      <a class="" href="php/gen6Handler.php">Gen 6</a>
+      <a class="" href="php/gen7Handler.php">Gen 7</a>
+    </div>
+    <div class="col-5 poke-list">
         <div class="dashboardTitle">List with all Pokémon</div>
         <?php include "php/pokeList.php"; ?>
     </div>
 
-    <div class="col-6 poke-team">
+    <div class="col-4 poke-team">
     <div class="dashboardTitle">My team!</div>
 
         <?php include "php/poketeam.php"; ?>
@@ -104,7 +113,7 @@ console.log("types left:" +typesLeft);
 var typesContentString = "";
 
 for(i = 0; i < typesLeft.length; i++){
-    typesContentString += '<div class="recommended-types">' + typesLeft[i] + '</div>';
+    typesContentString += '<div class="rec-types-wrapper"><div class="recommended-types"><img id="type-img" src="img/'+typesLeft[i]+'.png">' + typesLeft[i] + '</div></div>';
 }
 typesDiv.innerHTML = typesContentString; 
 }

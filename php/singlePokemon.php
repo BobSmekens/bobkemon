@@ -33,11 +33,11 @@ echo '
       Sorry, that pokemon does not exist
     </div>
 
-    <div class="col-6">  
+    <div class="col-7">  
       <img id="singlepokemon-img" src={{img}} alt="">
     </div>
-
-    <div class="col-6 singlepokemon-right" id="singlepokemon-right"> 
+  
+    <div class="col-5 singlepokemon-right" id="singlepokemon-right"> 
       
       <div id="poke-name">{{name}}</div>
       <div>Pokedex: {{id}}</div>
@@ -49,7 +49,7 @@ echo '
     <div class="container-fluid row singlepokemon-links">
       <a class="singlepokemon-link-left link-button" href="../../../index.php">Back to main</a>
       <?php 
-      echo '<a ng-if="error===NULL" class="singlepokemon-link-right link-button" href="../../addPokeTeamHandler.php?name='.$pokemon.'&id={{id}}&img={{img}}&type1={{type1}}&type2={{type2}}">Add to team</a>';
+      echo '<a ng-if="error===NULL" class="singlepokemon-link-right" id="add-to-team" href="../../addPokeTeamHandler.php?name='.$pokemon.'&id={{id}}&img={{img}}&type1={{type1}}&type2={{type2}}"></a>';
 
     ?>
     </div>
