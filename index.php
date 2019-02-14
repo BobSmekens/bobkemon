@@ -16,7 +16,7 @@ if(session_start()){
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-route.js"></script>
     <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
-<body class="indexBody">
+<body class="indexBody" onload="showRecommended()">
 <div class="indexTitle">Bobkémon <br>The pokémon-team-suggest-machine!</div>
 <div class="row" ng-app="pokeApp" ng-controller="myCtrl">
     <div class="col-6 poke-list">
@@ -40,7 +40,11 @@ if(session_start()){
 
 
 <script>
+function showRecommended() {
 var teamTypes = document.getElementsByClassName("teamTypes");
+// for(i = 0; i < teamTypes.length; i++){
+//     console.log(teamTypes[i].innerHTML);
+// }
 var allTypes = [
     "normal",
     "fight",
@@ -61,26 +65,49 @@ var allTypes = [
     "dark" ,
     "fairy"
 ];
+var typesInTeam = [];
 var deleteIndexes = [];
 var typesDiv = document.getElementById("neededTypes");
+
+for(i = 0; i < teamTypes.length; i++){
+    typesInTeam.push(teamTypes[i].innerHTML);
+}
+
+///////////////////fill array with indexes to delete/////////
 for(i = 0; i < teamTypes.length; i++){
     deleteIndexes.push(allTypes.indexOf(teamTypes[i].innerHTML));
-    console.log(deleteIndexes);
+    deleteIndexes.sort();
+    //console.log(deleteIndexes);
 }
-for(i = 0; i < deleteIndexes.length; i++){
-    if (deleteIndexes[i] != -1) {
-    allTypes.splice(deleteIndexes[i], 1);
-    }
+//////////////only indexes of >0 to delete values///////////////
+function deleteType(value){
+    return value > 0 ;
 }
+
+var deleteTypes = deleteIndexes.filter(deleteType);
+console.log("types to delete:" +deleteTypes);
+/////////////////////splic types out of array//////////////////
+// for(i = 0; i < deleteTypes.length; i++){
+//     if(deleteTypes[i] > -1){
+//     allTypes.splice(deleteTypes[i]-i, 1);
+//     }
+// }
+
+console.log(typesInTeam);
 console.log(allTypes);
+
+///////////////////compared arrays and remove duplicates/////////////
+var typesLeft = allTypes.filter(val => !typesInTeam.includes(val));
+
+console.log("types left:" +typesLeft);
+/////make string to put in innerHTML (print types values)///
 var typesContentString = "";
 
-for(i = 0; i < allTypes.length; i++){
-    typesContentString += '<div class="recommended-types">' + allTypes[i] + '</div>';
+for(i = 0; i < typesLeft.length; i++){
+    typesContentString += '<div class="recommended-types">' + typesLeft[i] + '</div>';
 }
-
 typesDiv.innerHTML = typesContentString; 
-
+}
 </script>
 
 <!--                scripts for bootstrap------------>
