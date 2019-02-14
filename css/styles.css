@@ -171,6 +171,15 @@ a:hover {
     padding: 10px;
 }
 
+
+
+.gen-links a {
+    display: block;
+    margin: auto;
+    padding: 5px;
+    font-size: 16px;
+}
+
 .gen-links {
     position: absolute;
     left: -50px;
@@ -182,14 +191,6 @@ a:hover {
     font-weight: bold;
     font-size: 20px;
 }
-
-.gen-links a {
-    display: block;
-    margin: auto;
-    padding: 5px;
-    font-size: 16px;
-}
-
 /*///////////////////single pokemon////////////////*/
 .singlepokemon-container {
     margin: 100px auto 0 auto;
