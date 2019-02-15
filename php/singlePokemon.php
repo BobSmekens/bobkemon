@@ -28,25 +28,25 @@ echo '
 <div id="hidden-link" style="display:none;">https://pokeapi.co/api/v2/pokemon/' . $pokemon . '/</div>
 ';
 ?>
-<div class="container-fluid row align-items-end" ng-app="pokeApp" ng-controller="myCtrl">
+<div class="singlepokemon-container" ng-app="pokeApp" ng-controller="myCtrl">
     <div ng-if="error">
       Sorry, that pokemon does not exist
     </div>
 
-    <div class="col-7">  
+    <div class="singlepokemon-left">  
       <img id="singlepokemon-img" src={{img}} alt="">
     </div>
   
-    <div class="col-5 singlepokemon-right" id="singlepokemon-right"> 
+    <div class="singlepokemon-right" id="singlepokemon-right"> 
       
       <div id="poke-name">{{name}}</div>
-      <div>Pokedex: {{id}}</div>
-      <div>Type: {{type1}} <span ng-if="type2">/ {{type2}}</span></div>
-      <div>Ability 1: {{ability1}}</div>
-      <div ng-if="ability2">Ability 2: {{ability2}}</div>
+      <div class="singlepokemon-property">Pokedex: {{id}}</div>
+      <div class="singlepokemon-property">Type: {{type1}} <span ng-if="type2">/ {{type2}}</span></div>
+      <div class="singlepokemon-property">Ability 1: {{ability1}}</div>
+      <div  class="singlepokemon-property" ng-if="ability2">Ability 2: {{ability2}}</div>
     </div>
 
-    <div class="container-fluid row singlepokemon-links">
+    <div class="singlepokemon-links">
       <a class="singlepokemon-link-left link-button" href="../../../index.php">Back to main</a>
       <?php 
       echo '<a ng-if="error===NULL" class="singlepokemon-link-right" id="add-to-team" href="../../addPokeTeamHandler.php?name='.$pokemon.'&id={{id}}&img={{img}}&type1={{type1}}&type2={{type2}}"></a>';

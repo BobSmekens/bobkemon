@@ -17,6 +17,7 @@ function printPokeTeam($ARRAY){
         <a class="poketeam-pokemon" href="php/singlePokemon.php/'.$ARRAY[$i]['id'].'/?name='.$ARRAY[$i]['name'].'">'.$ARRAY[$i]['name'].'</a>
         <div class="teamTypes">'. $ARRAY[$i]['type1'] .'</div>
         <div class="teamTypes">'. $ARRAY[$i]['type2'].'</div>
+        <a class="poketeam-delete" href="php/delete-item.php?pokeid='.$ARRAY[$i]['id'].'">Delete</a>
         </div>';
         }
     }
