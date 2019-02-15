@@ -33,12 +33,18 @@ else {
         </div>
       </div>
     </div>
-    
-      <a class="change-list-link list-link-left link-button" href="php/previousHandler.php">Previous</a>
+           
+<?php 
+        if(isset($_SESSION['offset'])&& $_SESSION['offset'] > 0){
+          echo '<a class="change-list-link list-link-left link-button" href="php/previousHandler.php">Previous</a>
+          ';
+        }
+        if(isset($_SESSION['offset'])&& $_SESSION['offset'] < 960){
+          echo '<a class="change-list-link list-link-right link-button" href="php/nextHandler.php">Next</a>
 
-        <a class="change-list-link list-link-left link-button" href="php/previousHandler.php">Previous</a>
-        <a class="change-list-link list-link-right link-button" href="php/nextHandler.php">Next</a>
-
+          ';
+        }
+?>
 
 
 <script>
